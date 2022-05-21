@@ -1,3 +1,34 @@
+# web-social-for-comic-readers
+
+### Description
+A social platform web application that allows to read and talk what comic you like
+
+## Features
+
+1. create accounts with email and password ...............
+2. user can login with email and password ...
+3. user can update account information ? Front end?
+4. user can see what commented on same article ?
+5. user can see who commented ?
+6. user can make reaction on their comments and articles ?
+7. author can post new articles ?
+8. author can update articles ?
+9. author can delete articles ?
+10. author can see list of articles posted ?
+
+## Project setup
+1. Generate react template
+    ```console
+    npx create react-app my-app
+    npm install
+    ```
+2. Install dependencies
+    ```console
+   npm i react-dom react-markdown react-hook-form react-scripts
+   npm i yup rehype-raw mui axios
+   npm i nodemon cors bcryptjs dotenv
+   npm i jsonwebtoken mongoose
+   ```
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
