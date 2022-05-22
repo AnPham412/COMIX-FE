@@ -11,10 +11,12 @@ A social platform web application that allows to read and talk what comic you li
 4. user can see what commented on same article ?
 5. user can see who commented ?
 6. user can make reaction on their comments and articles ?
-7. author can post new articles ?
-8. author can update articles ?
-9. author can delete articles ?
-10. author can see list of articles posted ?
+7. user can bookmark article  ?
+8. user can see list of bookmarked ?
+9. author can post new articles ?
+10. author can update articles ?
+11. author can delete articles ?
+12. author can see list of articles posted ?
 
 ## Project setup
 1. Generate react template
