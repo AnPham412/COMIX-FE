@@ -13,34 +13,46 @@ import Listing from "../pages/Article";
 import UserSetting from "../pages/UserSetting";
 import UserProfilePage from "../pages/UserProfile";
 import AuthRequire from "./AuthRequire";
+import AuthRole from "./AuthRole";
 
 // ----------------------------------------------------------------------
 
 export default function Router() {
   return useRoutes([
     {
-      path: "/",
+      path: "/nav",
       element:<NavBarLayout /> ,
       children: [
-        { path: "main", element: <Main /> },
+        { path: "main",index:true, element: <Main /> },
         { path: "view", element: <Listing /> },
-        { path: "posts", element: <Post /> },
+        { path: "post", element: <Post /> },
       ],
     },
     {
-      path: "/",
+      path: "/auth",
        element:<AuthRequire><NavBarLayout /></AuthRequire> ,
        //element:<NavBarLayout /> ,
       children: [
-        { path: "main", element: <Main /> },
         { path: "viewed", element: <Viewed /> },
-        { path: "view", element: <Listing /> },
-        { path: "posts", element: <Post /> },
+        { path: "view", element: <Navigate to="nav/view" /> },
+        { path: "post", element: <Navigate to="nav/post" /> },
         { path: "users", element: <UserProfilePage /> },
-        { path: "users/setting", element: <UserSetting /> },
+        //{ path: "users/me", element: <UserProfilePage /> },
+        //{ path: "users/:userId", element: <UserProfilePage /> },
+        //{ path: "users/me/update", element: <UserSetting /> },
+        //{ path: "delete/:userId", element: <AuthRole><UserProfilePage /></AuthRole> },
+        //{ path: "role/all", element: <AuthRole><UserProfilePage /></AuthRole> },
+        //{ path: "post/create", element: <Navigate to="nav/post" /> },
+        //{ path: "post/postlist/:userId", element: <Navigate to="nav/post" /> },
+        //{ path: "post/:id", element: <Navigate to="nav/post" /> },
+        // { path: "friend", element: <Navigate to="users/friend" /> },
+        // { path: "friend", element: <Navigate to="users/friend/requests/:userId" /> },
+        // { path: "friend", element: <Navigate to="users/friend/friendlist" /> },
+        // { path: "friend", element: <Navigate to="users/friend/:userId" /> },
       ],
     },
     {
+      path: "/",
     element: <BlankLayout/>,
     children: [
       { path: '/', element: <Navigate to="/nav/main" /> },

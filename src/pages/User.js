@@ -9,7 +9,7 @@ import PersonAddRoundedIcon from "@mui/icons-material/PersonAddRounded";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import PsychologyIcon from '@mui/icons-material/Psychology';
 
-import UserProfile from "../pages/UserProfile";
+import Profile from "../features/user/Profile";
 import ProfileCover from "../features/user/ProfileCover";
 import { capitalCase } from "change-case";
 import AddFriend from "../features/friend/AddFriend";
@@ -45,7 +45,7 @@ export default function User() {
         {
             value: "profile",
             icon: <AccountBoxIcon sx={{ fontSize: 24 }} />,
-            component: <UserProfile />,
+            component: <Profile />,
         },
         {
             value: "friends",

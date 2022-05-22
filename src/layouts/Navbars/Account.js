@@ -101,6 +101,14 @@ export default function AccountMenuPopover() {
                         }}
 
                     >
+                        <Box sx={{ my: 1.5, px: 2.5 }}>
+                            <Typography variant="subtitle2" noWrap>
+                                {user}
+                            </Typography>
+                        </Box>
+
+                        <Divider sx={{ borderStyle: 'dashed' }} />
+
                         <Stack sx={{ p: 1 }}>
                             {MENU_OPTIONS.map((option) => (
                                 <MenuItem key={option.label} to={option.linkTo} component={RouterLink} onClick={handleClose}>
@@ -157,7 +165,7 @@ export default function AccountMenuPopover() {
                     >
                         <Box sx={{ my: 1.5, px: 2.5 }}>
                             <Typography variant="subtitle2" noWrap>
-                                {user}
+                                USER
                             </Typography>
                         </Box>
 

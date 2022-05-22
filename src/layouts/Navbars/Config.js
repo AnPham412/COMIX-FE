@@ -13,18 +13,23 @@ const config = [
   },
   {
     title: 'User',
-    path: '/nav/users',
+    path: '/auth/users',
     icon: getIcon('bxs:user-circle'),
   },
   {
     title: 'History',
-    path: '/nav/viewed',
+    path: '/auth/viewed',
     icon: getIcon('ic:baseline-history'),
   },
   {
     title: 'Post',
-    path: '/nav/posts',
+    path: '/nav/post',
     icon: getIcon('eva:file-text-fill'),
+  },
+  {
+    title: 'Friends',
+    path: '/friend',
+    icon: getIcon('fa-solid:user-friends'),
   },
 ];
 

@@ -19,7 +19,7 @@ export default function Post() {
                     <Typography variant="h4" gutterBottom>
                         My Post
                     </Typography>
-                    <Button variant="contained" component={RouterLink} to={`#`} startIcon={<Iconify icon="eva:plus-fill" />}>
+                    <Button variant="contained" component={RouterLink} to={`/post/create`} startIcon={<Iconify icon="eva:plus-fill" />}>
                         New Post
                     </Button>
                 </Stack>

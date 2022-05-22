@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 // material
-import { Box, Checkbox, TableRow, TableCell, TableHead, TableSortLabel } from '@mui/material';
+import { Box, TableRow, TableCell, TableHead, TableSortLabel } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
@@ -29,11 +29,8 @@ ListHead.propTypes = {
 export default function ListHead({
   order,
   orderBy,
-  rowCount,
   headLabel,
-  numSelected,
   onRequestSort,
-  onSelectAllClick,
 }) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -43,11 +40,6 @@ export default function ListHead({
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
-          <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={rowCount > 0 && numSelected === rowCount}
-            onChange={onSelectAllClick}
-          />
         </TableCell>
         {headLabel.map((headCell) => (
           <TableCell

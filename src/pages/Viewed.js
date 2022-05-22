@@ -167,7 +167,7 @@ export default function Viewed() {
                 />
                 <TableBody>
                   {filteredArs.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-                      const { id, name, genre, author, status } = row;
+                      const { id, name, genres, author, status } = row;
                       const isItemSelected = selected.indexOf(name) !== -1;
 
                       return (
@@ -196,7 +196,7 @@ export default function Viewed() {
                               </Typography>
                             </Stack>
                           </TableCell>
-                          <TableCell align="left">{genre}</TableCell>
+                          <TableCell align="left">{genres}</TableCell>
                           <TableCell align="left">{author}</TableCell>
                           <TableCell align="left">
                             <Label
