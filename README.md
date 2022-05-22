@@ -17,6 +17,7 @@ A social platform web application that allows to read and talk what comic you li
 10. author can update articles ?
 11. author can delete articles ?
 12. author can see list of articles posted ?
+13. theme changing for each section ?
 
 ## Project setup
 1. Generate react template

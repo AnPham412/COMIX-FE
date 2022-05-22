@@ -19,7 +19,16 @@ import AuthRequire from "./AuthRequire";
 export default function Router() {
   return useRoutes([
     {
-      path: "/nav",
+      path: "/",
+      element:<NavBarLayout /> ,
+      children: [
+        { path: "main", element: <Main /> },
+        { path: "view", element: <Listing /> },
+        { path: "posts", element: <Post /> },
+      ],
+    },
+    {
+      path: "/",
        element:<AuthRequire><NavBarLayout /></AuthRequire> ,
        //element:<NavBarLayout /> ,
       children: [

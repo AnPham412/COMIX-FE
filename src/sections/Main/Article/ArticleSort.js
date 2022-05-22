@@ -1,6 +1,6 @@
 import { useState } from "react";
 // material
-import { Menu, Button, MenuItem, Typography } from "@mui/material";
+import { Menu, Button, MenuItem} from "@mui/material";
 // component
 import Iconify from "../../../components/Iconify";
 

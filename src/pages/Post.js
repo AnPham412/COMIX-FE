@@ -4,7 +4,7 @@ import { Grid, Button, Container, Stack, Typography } from '@mui/material';
 // components
 import Page from '../components/Page';
 import Iconify from '../components/Iconify';
-import { PostCard, PostsSort, PostsSearch } from '../sections/Main/Post';
+import { PostCard} from '../sections/Main/Post';
 // app
 import POSTS from '../app/post';
 import BackToTop from "../sections/Main/ToTopWidget";

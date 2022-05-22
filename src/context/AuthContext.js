@@ -49,14 +49,6 @@ const reducer = (state, action) => {
                 avatarUrl,
                 coverUrl,
                 aboutMe,
-                city,
-                country,
-                company,
-                jobTitle,
-                facebookLink,
-                instagramLink,
-                linkedinLink,
-                twitterLink,
                 friendCount,
                 postCount,
             } = action.payload;
@@ -68,14 +60,6 @@ const reducer = (state, action) => {
                     avatarUrl,
                     coverUrl,
                     aboutMe,
-                    city,
-                    country,
-                    company,
-                    jobTitle,
-                    facebookLink,
-                    instagramLink,
-                    linkedinLink,
-                    twitterLink,
                     friendCount,
                     postCount,
                 },
@@ -155,8 +139,11 @@ function AuthProvider({ children }) {
             type: LOGIN_SUCCESS,
             payload: { user },
         });
-
-        callback();
+        if (user.roles === "admin") {
+            callback("/users");
+        } else {
+            callback("/view");
+        }
     };
 
     const register = async ({ name, email, password }, callback) => {
