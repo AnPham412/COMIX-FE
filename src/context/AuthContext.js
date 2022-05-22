@@ -140,7 +140,7 @@ function AuthProvider({ children }) {
             payload: { user },
         });
         if (user.roles === "admin") {
-            callback("/users");
+            callback("/user");
         } else {
             callback("/view");
         }
