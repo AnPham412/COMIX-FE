@@ -18,7 +18,7 @@ const config = [
   },
   {
     title: 'History',
-    path: '/auth/viewed',
+    path: 'auth/viewed',
     icon: getIcon('ic:baseline-history'),
   },
   {
@@ -28,7 +28,7 @@ const config = [
   },
   {
     title: 'Friends',
-    path: '/friend',
+    path: 'auth/friend',
     icon: getIcon('fa-solid:user-friends'),
   },
 ];

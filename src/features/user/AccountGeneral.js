@@ -107,7 +107,6 @@ function AccountGeneral() {
             </Box>
 
             <Stack spacing={3} alignItems="flex-end" sx={{ mt: 3 }}>
-              <FTextField name="coverUrl" label="Home Profile Cover Image" />
               <FTextField name="aboutMe" multiline rows={4} label="About Me" />
 
               <LoadingButton

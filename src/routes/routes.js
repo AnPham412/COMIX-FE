@@ -14,7 +14,7 @@ import UserSetting from "../pages/UserSetting";
 import UserProfilePage from "../pages/UserProfile";
 import AuthRequire from "./AuthRequire";
 import AuthRole from "./AuthRole";
-import User from "../pages/User";
+
 
 // ----------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ export default function Router() {
       ],
     },
     {
-      path: "/",
+      path: "/auth",
        //element:<AuthRequire><NavBarLayout /></AuthRequire> ,
        element:<NavBarLayout /> ,
       children: [
