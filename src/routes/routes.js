@@ -14,6 +14,7 @@ import UserSetting from "../pages/UserSetting";
 import UserProfilePage from "../pages/UserProfile";
 import AuthRequire from "./AuthRequire";
 import AuthRole from "./AuthRole";
+import User from "../pages/User";
 
 // ----------------------------------------------------------------------
 
@@ -29,14 +30,14 @@ export default function Router() {
       ],
     },
     {
-      path: "/auth",
-       element:<AuthRequire><NavBarLayout /></AuthRequire> ,
-       //element:<NavBarLayout /> ,
+      path: "/",
+       //element:<AuthRequire><NavBarLayout /></AuthRequire> ,
+       element:<NavBarLayout /> ,
       children: [
         { path: "viewed", element: <Viewed /> },
         { path: "view", element: <Navigate to="nav/view" /> },
         { path: "post", element: <Navigate to="nav/post" /> },
-        { path: "users", element: <UserProfilePage /> },
+        { path: "users", element: <UserSetting /> },
         //{ path: "users/me", element: <UserProfilePage /> },
         //{ path: "users/:userId", element: <UserProfilePage /> },
         //{ path: "users/me/update", element: <UserSetting /> },

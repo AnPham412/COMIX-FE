@@ -39,7 +39,6 @@ function ProfileCover({ profile }) {
   const {
     _id: targetUserId,
     name,
-    userTitle,
     coverUrl,
     avatarUrl,
     friendship,
@@ -84,7 +83,6 @@ function ProfileCover({ profile }) {
           }}
         >
           <Typography variant="h5">{name}</Typography>
-          <Typography sx={{ opacity: 0.72 }}>{userTitle}</Typography>
           {friendStatus ? (
             friendStatus
           ) : (
