@@ -21,22 +21,22 @@ import AuthRole from "./AuthRole";
 export default function Router() {
   return useRoutes([
     {
-      path: "/nav",
+      path: "/",
       element:<NavBarLayout /> ,
       children: [
-        { path: "main",index:true, element: <Main /> },
+        { index:true, element: <Main /> },
         { path: "view", element: <Listing /> },
         { path: "post", element: <Post /> },
       ],
     },
     {
-      path: "/auth",
-       //element:<AuthRequire><NavBarLayout /></AuthRequire> ,
-       element:<NavBarLayout /> ,
+      path: "/",
+       element:<AuthRequire><NavBarLayout /></AuthRequire> ,
+       //element:<NavBarLayout /> ,
       children: [
         { path: "viewed", element: <Viewed /> },
-        { path: "view", element: <Navigate to="nav/view" /> },
-        { path: "post", element: <Navigate to="nav/post" /> },
+        { path: "view", element: <Navigate to="/view" /> },
+        { path: "post", element: <Navigate to="/post" /> },
         { path: "users", element: <UserSetting /> },
         //{ path: "users/me", element: <UserProfilePage /> },
         //{ path: "users/:userId", element: <UserProfilePage /> },

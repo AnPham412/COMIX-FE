@@ -19,7 +19,7 @@ import Iconify from '../../../components/Iconify';
 import Scrollbar from '../../../components/ScrollBar';
 
 
-export const FILTER_GENDER_OPTIONS = ['Boys', 'Girls', 'Kids'];
+export const FILTER_GENDER_OPTIONS = ['Boys', 'Girls', 'All'];
 export const FILTER_GENRES_OPTIONS = ['Action', 'Comedy', 'Romance', 'Fantasy'];
 FilterSidebar.propTypes = {
     isOpenFilter: PropTypes.bool,
@@ -68,13 +68,13 @@ export default function FilterSidebar({ isOpenFilter, onOpenFilter, onCloseFilte
 
                         <div>
                             <Typography variant="subtitle1" gutterBottom>
-                                Category
+                                Genre
                             </Typography>
-                            <RadioGroup>
+                            <FormGroup>
                                 {FILTER_GENRES_OPTIONS.map((item) => (
-                                    <FormControlLabel key={item} value={item} control={<Radio />} label={item} />
+                                    <FormControlLabel key={item} value={item} control={<Checkbox />} label={item} />
                                 ))}
-                            </RadioGroup>
+                            </FormGroup>
                         </div>
                     </Stack>
                 </Scrollbar>
