@@ -132,6 +132,7 @@ export default function Viewed() {
 
   const isArsNotFound = filteredArs.length === 0;
 
+
   return (
     <Page title="User">
       <Container>
