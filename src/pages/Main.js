@@ -18,7 +18,7 @@ export default function Main() {
                     COMIX
                 </Typography>
 
-                    <Grid container spacing={3}>
+                    <Grid container spacing={3} sx={{paddingLeft:"30px"}}>
                         <ArticleList articles={articles}/>
                     </Grid>
             </Container>

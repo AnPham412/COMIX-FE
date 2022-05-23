@@ -64,7 +64,7 @@ export default function Register() {
   return (
     <Page title="Register">
       <RootStyle>
-        <HeaderStyle>
+        <HeaderStyle sx={{ justifyContent: 'space-between' }}>
           <Logo/>
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>

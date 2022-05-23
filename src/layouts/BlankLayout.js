@@ -19,7 +19,7 @@ export default function BlankLayout() {
   return (
       <>
       <HeaderStyle>
-          <Logo />
+
       </HeaderStyle>
     <Outlet />
     </>
