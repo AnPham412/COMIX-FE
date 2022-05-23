@@ -1,11 +1,11 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
-import {useLocation, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 // material
 import {Stack, TextField, IconButton, InputAdornment, Container} from '@mui/material';
-import {LoadingButton} from '@mui/lab';
+import {Alert, LoadingButton} from '@mui/lab';
 // component
 import Iconify from '../../../components/Iconify';
 import {FormProvider, FTextField} from "../../../components/form";
@@ -32,7 +32,6 @@ const defaultValues={
 export default function RegisterForm() {
   const navigate = useNavigate();
   const auth = useAuth();
-  const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirmation, setShowPasswordConfirmation] =
       useState(false);
@@ -41,23 +40,32 @@ export default function RegisterForm() {
     resolver: yupResolver(RegisterSchema),
     defaultValues,
   });
-  const {
-    handleSubmit,
-    formState: { isSubmitting },
-  } = methods;
+    const {
+        handleSubmit,
+        reset,
+        setError,
+        formState: { errors, isSubmitting },
+    } = methods;
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const { name, email, password } = data;
-       auth.register({ name, email, password }, () => {
-           const from = location.state?.from?.pathname || "/";
-        navigate(from, { replace: true });
-      });
+      try {
+          await auth.register({ name, email, password }, () => {
+              navigate("/", { replace: true });
+          });
+      } catch (error) {
+          reset();
+          setError("responseError", error);
+      }
   };
 
   return (
       <Container >
         <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
           <Stack spacing={3}>
+              {!!errors.responseError && (
+                  <Alert severity="error">{errors.responseError.message}</Alert>
+              )}
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
               <FTextField name="Fname" label="First name" />
 
