@@ -31,8 +31,8 @@ export default function Router() {
     },
     {
       path: "/",
-       element:<AuthRequire><NavBarLayout /></AuthRequire> ,
-       //element:<NavBarLayout /> ,
+       //element:<AuthRequire><NavBarLayout /></AuthRequire> ,
+       element:<NavBarLayout /> ,
       children: [
         { path: "viewed", element: <Viewed /> },
         { path: "view", element: <Navigate to="/view" /> },

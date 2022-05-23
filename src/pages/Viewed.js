@@ -124,7 +124,9 @@ export default function Viewed() {
 
   const handleFilterByName = (event) => {
     setFilterName(event.target.value);
+    //dipatch even.target.value vào store
   };
+
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - articles.length) : 0;
 

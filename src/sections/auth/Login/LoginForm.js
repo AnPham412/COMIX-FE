@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
-import {Link as RouterLink, useLocation, useNavigate} from 'react-router-dom';
+import {Link as RouterLink, useNavigate} from 'react-router-dom';
 import {FTextField, FormProvider, FCheckbox} from "../../../components/form";
 import { useForm } from "react-hook-form";
 // material
@@ -14,7 +14,6 @@ import {yupResolver} from "@hookform/resolvers/yup";
 
 export default function LoginForm() {
   const navigate = useNavigate();
-  const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
   const auth = useAuth();
 
@@ -43,12 +42,11 @@ export default function LoginForm() {
     setShowPassword((show) => !show);
   };
   const onSubmit = async (data) => {
-    const from = location.state?.from?.pathname || "/";
     let { email, password } = data;
 
     try {
-      await auth.login({ email, password }, () => {
-        navigate(from, { replace: true });
+      await auth.login({ email, password }, (path) => {
+        navigate(path, { replace: true });
       });
     } catch (error) {
       reset();

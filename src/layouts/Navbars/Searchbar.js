@@ -6,7 +6,7 @@ import { Input, Slide, Button, IconButton, InputAdornment, ClickAwayListener } f
 import Iconify from '../../components/Iconify';
 import {useSearchParams} from "react-router-dom";
 import PropTypes from "prop-types";
-import ListToolbar from "../../sections/Main/viewed/ListToolbar";
+
 
 // ----------------------------------------------------------------------
 
@@ -71,8 +71,6 @@ export default function Searchbar(filterName,onFilterName) {
                             fullWidth
                             disableUnderline
                             placeholder="Search…"
-                            value={filterName}
-                            onChange={onFilterName}
                             startAdornment={
                                 <InputAdornment position="start">
                                     <Iconify icon="eva:search-fill" sx={{ color: 'text.disabled', width: 20, height: 20 }} />

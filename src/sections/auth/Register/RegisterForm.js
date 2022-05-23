@@ -51,7 +51,7 @@ export default function RegisterForm() {
     const { name, email, password } = data;
       try {
           await auth.register({ name, email, password }, () => {
-              navigate("/", { replace: true });
+              navigate("/users", { replace: true });
           });
       } catch (error) {
           reset();
