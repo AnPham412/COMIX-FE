@@ -1,4 +1,4 @@
-# web-social-for-comic-readers
+# web-social
 
 ### Description
 A social platform web application that allows to read and talk what comic you like
